@@ -1,0 +1,43 @@
+.home{
+    .left-bar{background-image: url(../../../../assets//images/sidebar-3.34535b95.jpg);
+        
+       }
+    .title-row{
+        padding: 10px 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1rem 5rem;
+        background-color: black;
+        opacity: 0.8;
+        
+    }
+    
+    .list{
+        position: relative;
+        height: calc(100vh - 75px);
+        .list-items{
+            background-color: black;
+            opacity: 0.8;
+            padding: 22px 14px 0 11px;
+        }
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        color: #fff;
+        padding: 15px;
+        background-color: #1FA298;
+        margin-left: 20px;
+        margin-right: 9px;
+    }
+    .nav-link {
+        color: #ffffff;
+        display: block;
+        padding: 1.8rem 2rem;
+    }
+    .right-side{
+        background-color: #eae3e3;
+        padding: 18px 27px;
+        span{color: #5a4848;}
+    }
+    .right-side-content{
+        margin-top: 4rem;
+    }
+}
