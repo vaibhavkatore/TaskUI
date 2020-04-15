@@ -32,12 +32,12 @@ const getAllStudents = () => {
 }
 
 
-const createUser = (handleSuccess, data) =>{
+const createUser = (handleSuccess, data) => {
     return function (dispatch) {
         dispatch({
             type: Constants.SAAS_CONTACT_REQUEST
-		});
-            return fetch(`${API}api/create`, {
+        });
+        return fetch(`${API}api/create`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -46,9 +46,9 @@ const createUser = (handleSuccess, data) =>{
 
         })
             .then(response => response.json()
-            .then(body => ({ response, body })))
+                .then(body => ({ response, body })))
             .then(({ response, body }) => {
-				if (!response.ok) {
+                if (!response.ok) {
                     dispatch({
                         type: Constants.SAAS_CONTACT_REQUEST_FAIL,
                         payload: body.error
@@ -56,9 +56,9 @@ const createUser = (handleSuccess, data) =>{
                 } else {
                     dispatch({
                         type: Constants.SAAS_CONTACT_REQUEST_SUCCESS,
-						payload: body
+                        payload: body
                     });
-                     handleSuccess(body);
+                    handleSuccess(body);
                 }
             });
     }
