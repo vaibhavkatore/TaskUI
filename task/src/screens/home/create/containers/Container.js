@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 import Markup from '../components/Markup';
-import actions from '../modules/actions';
+import actions from '../../view/modules/actions';
 
 class Container extends Component {
 	constructor(props) {
@@ -17,7 +17,10 @@ class Container extends Component {
         //     invalid: false
 
         // }
-	}
+    }
+    componentDidMount(){
+        this.props.actions.getAllStudents()
+    }
 
 	// onChangetext = (e) => {
     //     this.setState({
@@ -54,7 +57,9 @@ class Container extends Component {
 	}
 }
 const mapStateToProps = (state) => {
+    console.log("mapstate>>>>>>>>>>>>>>>",state)
     return {
+        userList: state.home.studentsList
     }
 }
 

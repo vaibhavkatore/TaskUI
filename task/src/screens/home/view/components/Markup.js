@@ -3,6 +3,7 @@ import { Tab, Col, Nav, Row, Card } from 'react-bootstrap';
 
 import './Markup.scss'
 const View = (props) =>{
+	const {userList} =props;
     return (
 		<div className="right-container">
 			
@@ -21,60 +22,14 @@ const View = (props) =>{
 				</tr>
 			</thead>
 			<tbody>
+				{userList?userList.map(user =>{
+				return(
 				<tr>
-				<th scope="row">1</th>
+				<th scope="row">{`${user.first_name} ${user.last_name}`}</th>
 				<td>Mark</td>
 				<td>Otto</td>
 				<td>@mdo</td>
-				</tr>
-				<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-				</tr>
-				<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				</tr>
-				<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				</tr>
-				<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				</tr>
-				<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				</tr>
-				<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				</tr>
-				<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				</tr>
-				<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				</tr>
+				</tr>)}):''}
 			</tbody>
 			</table>
 			</Card>

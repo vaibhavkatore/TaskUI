@@ -47,8 +47,10 @@ class Container extends Component {
     //          this.props.actions.contactUs(handleSuccess, data);
     //     }
 	render() {
+        const { userList } = this.props;
 		return (
 			<Markup
+            userList={userList}
 			/>
 		);
 	}

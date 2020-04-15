@@ -1,37 +1,35 @@
 
-// import Constants from './Constants';
-// // import { APISAAS_DOMAIN } from '../../env';
+import Constants from './Constants';
+import { API } from '../../../../env';
 
-// const getAllStudents = () => {
-//     return (dispatch, getState) => {
-//         const { Auth: { user: { token, user} } } = getState();
-//         dispatch({
-//             type: Constants.GET_ALL_STUDENTS_REQUEST
-//         });
-//         return fetch(`api/student/list/${user.id}`, {
-//             method: 'GET',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Authorization': 'Bearer ' + token
-//             }
-//         })
+const getAllStudents = () => {
+    return (dispatch) => {
+        dispatch({
+            type: Constants.GET_ALL_STUDENTS_REQUEST
+        });
+        return fetch(`${API}api/list`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
 
-//             .then(response => response.json().then(body => ({ response, body })))
-//             .then(({ response, body }) => {
-//                 if (!response.ok) {
-//                     dispatch({
-//                         type: Constants.GET_ALL_STUDENTS_FAIL,
-//                         payload: body.error
-//                     });
-//                 } else {
-//                     dispatch({
-//                         type: Constants.GET_ALL_STUDENTS_SUCCESS,
-//                         payload: body
-//                     });
-//                 }
-//             });
-//     }
-// }
+            .then(response => response.json().then(body => ({ response, body })))
+            .then(({ response, body }) => {
+                if (!response.ok) {
+                    dispatch({
+                        type: Constants.GET_ALL_STUDENTS_FAIL,
+                        payload: body.error
+                    });
+                } else {
+                    dispatch({
+                        type: Constants.GET_ALL_STUDENTS_SUCCESS,
+                        payload: body
+                    });
+                }
+            });
+    }
+}
 
 
 // const contactUs = (handleSuccess, data) =>{
@@ -67,12 +65,6 @@
 
 
 // }
-// export default {
-//     getAllStudents,
-//     getStudent,
-//     getCourse,
-//     getReport,
-//     upload,
-//     updateReport,
-//     contactUs
-// }
+export default {
+    getAllStudents,
+}
