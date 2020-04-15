@@ -5,7 +5,7 @@ import { API } from '../../../../env';
 const getAllStudents = () => {
     return (dispatch) => {
         dispatch({
-            type: Constants.GET_ALL_STUDENTS_REQUEST
+            type: Constants.GET_ALL_USER_REQUEST
         });
         return fetch(`${API}api/list`, {
             method: 'GET',
@@ -18,12 +18,12 @@ const getAllStudents = () => {
             .then(({ response, body }) => {
                 if (!response.ok) {
                     dispatch({
-                        type: Constants.GET_ALL_STUDENTS_FAIL,
+                        type: Constants.GET_ALL_USER_FAIL,
                         payload: body.error
                     });
                 } else {
                     dispatch({
-                        type: Constants.GET_ALL_STUDENTS_SUCCESS,
+                        type: Constants.GET_ALL_USER_SUCCESS,
                         payload: body
                     });
                 }
@@ -35,7 +35,7 @@ const getAllStudents = () => {
 const createUser = (handleSuccess, data) => {
     return function (dispatch) {
         dispatch({
-            type: Constants.SAAS_CONTACT_REQUEST
+            type: Constants.POST_USER_REQUEST
         });
         return fetch(`${API}api/create`, {
             method: 'POST',
@@ -50,12 +50,12 @@ const createUser = (handleSuccess, data) => {
             .then(({ response, body }) => {
                 if (!response.ok) {
                     dispatch({
-                        type: Constants.SAAS_CONTACT_REQUEST_FAIL,
+                        type: Constants.POST_USER_REQUEST_FAIL,
                         payload: body.error
                     });
                 } else {
                     dispatch({
-                        type: Constants.SAAS_CONTACT_REQUEST_SUCCESS,
+                        type: Constants.POST_USER_REQUEST_SUCCESS,
                         payload: body
                     });
                     handleSuccess(body);

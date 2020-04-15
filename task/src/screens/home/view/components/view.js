@@ -25,7 +25,7 @@ const View = (props) => {
 						{userList ? userList.map(user => {
 							return (
 								<tr>
-									<th>scope="row">{`${user.first_name} ${user.last_name}`}</th>
+									<th>{`${user.first_name} ${user.last_name}`}</th>
 									<td>{user.country}</td>
 									<td>{user.city}</td>
 									<td></td>

@@ -28,6 +28,7 @@ class Container extends Component {
     }
 
     onChangetext = (e) => {
+        console.log(e)
         this.setState({
             [`${e.target.name}`]: e.target.value
         });
@@ -60,7 +61,7 @@ class Container extends Component {
         }
 
         const handleSuccess = (data) => {
-            alert("ContactUs Successfully")
+            alert("Created Successfully")
         };
         this.props.actions.createUser(handleSuccess, data);
     }
@@ -69,14 +70,14 @@ class Container extends Component {
             <Markup
                 onChangetext={this.onChangetext}
                 onCreate={this.onCreate}
+                userList={this.props.userList}
             />
         );
     }
 }
 const mapStateToProps = (state) => {
-    console.log("mapstate>>>>>>>>>>>>>>>", state)
     return {
-        userList: state.home.studentsList
+        userList: state.home.userList
     }
 }
 

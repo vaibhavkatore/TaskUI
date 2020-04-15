@@ -5,7 +5,7 @@ import CreateUser from './CreateMarkup'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Markup.scss'
 const Create = (props) => {
-  const { onChangetext, onCreate } = props;
+  const { onChangetext, onCreate, userList } = props;
   return (
     <div className="home">
       <Tab.Container id="left-tabs-example" defaultActiveKey="first" >
@@ -72,7 +72,9 @@ const Create = (props) => {
                   />
                 </Tab.Pane>
                 <Tab.Pane eventKey="table-list" className="right-side-content">
-                  <View />
+                  <View
+                    userList={userList}
+                  />
                 </Tab.Pane>
               </Tab.Content>
             </Col>
