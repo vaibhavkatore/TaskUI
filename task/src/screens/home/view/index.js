@@ -3,7 +3,7 @@ import Container from "./containers/Container";
 
 export default [
 	{
-		path: "/view",
+		path: "/",
 		exact: true,
 		component: () => <Container />
 	},

@@ -8,55 +8,75 @@ import actions from '../modules/actions';
 class Container extends Component {
 	constructor(props) {
 		super(props);
-		// this.state = {
-        //     firstNameVal: "",
-        //     emailVal: "",
-        //     phoneVal:"",
-        //     organizationNameVal: "",
-        //     errors: {},
-        //     invalid: false
+        this.state = 
+         {
+            company: '',
+            username: '',
+            email: '',
+            first_name: '' ,
+            last_name: '',
+            city: '',
+            country: '',
+            postal_code: '',
+            about: ''
 
-        // }
-	}
+        }
+    }
+    componentDidMount(){
+        this.props.actions.getAllStudents()
+        
+    }
 
-	// onChangetext = (e) => {
-    //     this.setState({
-    //         [`${e.target.name}`]: e.target.value
-    //     });
-    // }
+	onChangetext = (e) => {
+        this.setState({
+            [`${e.target.name}`]: e.target.value
+        });
+    }
 
-	// onContactUs = () =>{
-    //     const {
-    //         firstNameVal: first_name,
-    //         emailVal: email,
-    //         phoneVal: phone_number,
-    //         organizationNameVal: company_name,
+	onCreate = () =>{
+        const {
+        company,
+        username,
+        email,
+        first_name ,
+        last_name,
+        city,
+        country,
+        postal_code,
+        about
+           
+        } = this.state;
 
-    //     } = this.state;
-
-    //         const data = {
-    //             email,
-    //             first_name,
-    //             phone_number,
-    //             company_name
-    //             }                
+            const data = {
+                company: company,
+                username: username,
+                email: email,
+                first_name: first_name,
+                last_name: last_name,
+                city: city,
+                country: country,
+                postal_code: postal_code,
+                about: about
+                }                
     
-    //         const handleSuccess = (data) => {
-	// 			alert("ContactUs Successfully")
-	// 		};
-    //          this.props.actions.contactUs(handleSuccess, data);
-    //     }
+            const handleSuccess = (data) => {
+				alert("ContactUs Successfully")
+			};
+             this.props.actions.createUser(handleSuccess, data);
+        }
 	render() {
-        const { userList } = this.props;
 		return (
 			<Markup
-            userList={userList}
+            onChangetext={this.onChangetext}
+            onCreate={this.onCreate}
 			/>
 		);
 	}
 }
 const mapStateToProps = (state) => {
+    console.log("mapstate>>>>>>>>>>>>>>>",state)
     return {
+        userList: state.home.studentsList
     }
 }
 
