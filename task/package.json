@@ -12,6 +12,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "blueprintjs": "0.0.8",
+    "firebase-tools": "^8.0.3",
     "install": "^0.13.0",
     "mirrorkey": "^1.2.0",
     "node-sass": "^4.13.1",

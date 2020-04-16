@@ -3,7 +3,7 @@ import Constants from './Constants';
 const INITIAL_STATE = {
     userList: [],
     error: false,
-    isLoading:false
+    isLoading: false
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -24,7 +24,7 @@ export default (state = INITIAL_STATE, action) => {
                 ...state,
                 isLoading: false,
                 error: action.error
-            }; 
+            };
         case Constants.POST_USER_REQUEST_:
             return {
                 ...state,
@@ -35,13 +35,13 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isFetching: false,
-                
+
             };
         case Constants.POST_USER_REQUEST_SUCCESS:
             return {
                 ...state,
                 isFetching: false,
-               
+
             };
         default:
             return state;

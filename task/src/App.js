@@ -1,4 +1,4 @@
-import React,  { Component }  from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Routes from "./routes/index";
@@ -16,7 +16,7 @@ import {
     faBell,
     faGlobe,
     faSearch
-    
+
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -33,23 +33,23 @@ library.add(
     faSearch
 )
 class App extends Component {
-  constructor(props) {
-      super(props);
-  }
-  render() {
-      return (
-          <Router>
-              {Routes.map((route, index) => (
-                  <Route
-                      key={index}
-                      path={route.path}
-                      exact={route.exact}
-                      component={route.component}
-                  />
-              ))}
-          </Router>
-      );
-  }
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <Router>
+                {Routes.map((route, index) => (
+                    <Route
+                        key={index}
+                        path={route.path}
+                        exact={route.exact}
+                        component={route.component}
+                    />
+                ))}
+            </Router>
+        );
+    }
 }
 
 export default App;

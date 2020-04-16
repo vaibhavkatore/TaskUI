@@ -24,11 +24,21 @@ const Create = (props) => {
             <Col md="9" className="right-side">
               <Tab.Pane eventKey="table-list">
                 <Row>
-                  <Col md="7">
+                  <Col md="8">
                     <span>Table List</span>
                   </Col>
                   <Col md="4">
-                    <input type="text" class="form-control search" placeholder="Search" />
+                    <Row>
+                      <Col md="5">
+                    <input type="text" aria-describedby="inputGroup-sizing-sm" class="form-control search" placeholder="Search" />
+                    </Col>
+                    
+                    <Col md="7" className="text-right">
+                    <FontAwesomeIcon className="search-icon" icon={['fas', 'search']} />
+                    <FontAwesomeIcon className="side-icon"   icon={['fas', 'th-large']} />
+                    <FontAwesomeIcon className="side-icon" icon={['fas', 'bell']} />
+                    </Col>
+                    </Row>
                   </Col>
                 </Row>
               </Tab.Pane>

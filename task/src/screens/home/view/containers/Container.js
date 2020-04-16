@@ -61,6 +61,7 @@ class Container extends Component {
         }
 
         const handleSuccess = (data) => {
+            this.props.actions.getAllStudents()
             alert("Created Successfully")
         };
         this.props.actions.createUser(handleSuccess, data);
